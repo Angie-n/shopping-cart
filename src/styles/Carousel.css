@@ -7,7 +7,7 @@
     background-color: black;
     z-index: 2;
     width: inherit;
-    opacity: 0.25;
+    opacity: 0.4;
     height: 100%;
 }
 
@@ -17,6 +17,57 @@
     display: flex;
     align-items: center;
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}
+
+.faded-text {
+    animation: 2s fadeIn;
+}
+
+#carousel-text-container {
+    position: absolute;
+    z-index: 2;
+    font-size: 5vw;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#carousel-text {
+    color: white;
+    width: 80%;
+    height: 30%;
+}
+
+#carousel-text-container a {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 4px white double;
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+    font-size: 2.8vw;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+#carousel-text-container a:hover {
+    background-color: white;
+    color: var(--brown);
+    border-color: black;
+}
+
 #carousel-images {
     display: flex;
     overflow: hidden;
@@ -34,15 +85,6 @@
 
 #carousel-images img:nth-child(1) {
     z-index: 1;
-}
-
-#carousel-container button {
-    border: none;
-    color: white;
-}
-
-#carousel-container button:hover {
-    color: var(--gray);
 }
 
 #carousel-indicator-btn-container {
@@ -88,6 +130,12 @@
     transform: scale(1, 1.5);
     font-size: 35px;
     margin: 0 25px 0 25px;
+    border: none;
+    color: white;
+}
+
+#carousel-next-btn-container button:hover {
+    color: gray;
 }
 
 @media only screen and (min-width: 800px) {

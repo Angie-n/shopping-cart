@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Carousel.css";
 
 function importAll(r) {
@@ -6,6 +7,7 @@ function importAll(r) {
 }
   
 const images = importAll(require.context('../assets/images/carousel', true, /\.(png|jpe?g)$/));
+const imageTexts = ["A diverse collection for your varied tastes", "Beautiful bouquets for every occasion", "A way to touch grass without stepping outside", "Smells fresh so you don't have to", "Start your collection today"];
 
 const Carousel = () => {
     const [currentImage, setCurrentImage] = useState(images[0]);
@@ -112,20 +114,28 @@ const Carousel = () => {
 
     useEffect(() => {
         if(nextImage != null) {
+            let carouselText = document.getElementById("carousel-text");
+            carouselText.classList.add("faded-text");
+            carouselText.textContent = imageTexts[images.indexOf(nextImage)];
             moveCarousel();
             setIsDelayed(true);
-            setTimeout(() => setIsDelayed(false), 2000);
+            setTimeout(() => {
+                setIsDelayed(false);
+                carouselText.classList.remove("faded-text");
+            }, 1000);
         }
     }, [nextImage]);
     
 
     useEffect(() => {
+        document.getElementById("carousel-text").textContent = imageTexts[0];
         document.getElementsByClassName("carousel-indicator-btn")[0].id = "carousel-indicator-btn-active";
     }, []);
 
     return (
         <div id="carousel-container">
             <div className="black-screen"></div>
+            <div id="carousel-text-container"><h2 id="carousel-text"></h2><Link to='/shop'>Shop Now</Link></div>
             <div id="carousel-images">
                 {images.map((img, i) => <img data-index-number={i} style={{left: i * -100 + "%"}} data-offset-left={i * -100} key={"carousel-img-" + i} src={img} alt=""></img>)}
             </div>
