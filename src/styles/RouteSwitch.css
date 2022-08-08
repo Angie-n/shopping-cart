@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --dark-green: rgb(15, 112, 15);
+}
+
+@font-face {
+    font-family: CormorantSC;
+    src: url("../assets/fonts/CormorantSC-Regular.ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+body {
+    font-size: 10px;
+    font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+

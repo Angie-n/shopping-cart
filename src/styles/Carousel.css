@@ -1,0 +1,98 @@
+.no-transition {
+    transition: none !important;
+}
+
+.black-screen {
+    position: absolute;
+    background-color: black;
+    z-index: 2;
+    width: inherit;
+    opacity: 0.25;
+    height: 100%;
+}
+
+#carousel-container {
+    width: 100vw; 
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#carousel-images {
+    display: flex;
+    overflow: hidden;
+    min-height: 300px;
+    width: 100vw;
+}
+
+#carousel-images img {
+    position: relative;
+    z-index: 0;
+    object-fit: cover;
+    min-width: 100vw;
+    transition: transform 1s;
+}
+
+#carousel-images img:nth-child(1) {
+    z-index: 1;
+}
+
+#carousel-container button {
+    border: none;
+    color: white;
+}
+
+#carousel-container button:hover {
+    color: var(--gray);
+}
+
+#carousel-indicator-btn-container {
+    position: absolute;
+    z-index: 2;
+    bottom: 5px;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+#carousel-indicator-btn-container button {
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    min-height: 8px;
+    min-width: 8px;
+    width: 1vw;
+    height: 1vw;
+    margin: 8px;
+}
+
+#carousel-indicator-btn-container button:hover {
+    background-color: gray;
+}
+
+#carousel-indicator-btn-active {
+    background-color: white !important;
+}
+
+#carousel-next-btn-container {
+    position: absolute;
+    width: inherit;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#carousel-next-btn-container button {
+    background-color: transparent;
+    font-family: poppins,'Courier New', Courier, monospace;
+    transform: scale(1, 1.5);
+    font-size: 35px;
+    margin: 0 25px 0 25px;
+}
+
+@media only screen and (min-width: 800px) {
+    #carousel-images img {
+        min-height: 300px;
+        max-height: 100vh;
+    }
+}
