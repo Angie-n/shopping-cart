@@ -63,7 +63,8 @@
 #carousel-text-container a:hover {
     background-color: white;
     color: var(--brown);
-    border-color: black;
+    border-color: var(--brown);
+    opacity: 0.8;
 }
 
 #carousel-images {
