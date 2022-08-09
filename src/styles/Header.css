@@ -1,10 +1,11 @@
 header {
     display: grid;
+    height: var(--header-height);
     grid-template-columns: 1fr 60px;
     grid-template-rows: 1fr;
     align-items: center;
     font-size: 2em;
-    padding: 10px;
+    padding: var(--header-padding);
     font-family: CormorantSC, Optima, Arial, Helvetica, sans-serif;
 }
 

@@ -6,6 +6,8 @@
 :root {
     --dark-green: rgb(15, 112, 15);
     --brown: rgb(82, 10, 10);
+    --header-height: 50px;
+    --header-padding: 10px;
 }
 
 @font-face {
