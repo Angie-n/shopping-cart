@@ -59,12 +59,32 @@ header nav ul li:nth-child(1) a:hover {
 }
 
 #cart-btn {
+    position: relative;
     border: none;
     background-color: inherit;
-    font-size: 20px;
+    font-size: 25px;
     color: var(--dark-green);
 }
 
 #cart-btn:hover {
     color: var(--green);
+}
+
+#cart-btn:hover #cart-num-icon{
+    background-color: rgb(207, 12, 12);
+}
+
+#cart-num-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 18px;
+    left: 18px;
+    color: white;
+    background-color: rgb(185, 8, 8);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    font-size: 0.5em;
 }
