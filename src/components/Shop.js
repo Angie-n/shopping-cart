@@ -1,6 +1,10 @@
+import ShopItemsDisplay from "./ShopItemsDisplay";
+
 const Shop = () => {
     return (
-        <main>Shop</main>
+        <main>
+            <ShopItemsDisplay />
+        </main>
     );
 };
 
