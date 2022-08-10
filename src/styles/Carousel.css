@@ -40,7 +40,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-size: clamp(20px, 5vw, 60px);
+    font-size: clamp(20px, 5vw, 40px);
 }
 
 #carousel-text {
@@ -70,7 +70,7 @@
 #carousel-images {
     display: flex;
     overflow: hidden;
-    min-height: max(300px, 70vh);
+    min-height: max(300px, 60vh);
     max-height: max(calc(100vh - var(--header-height) - var(--header-padding) * 2), 500px);
     width: 100vw;
 }
