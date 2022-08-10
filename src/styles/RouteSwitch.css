@@ -4,8 +4,12 @@
 }
 
 :root {
-    --dark-green: rgb(15, 112, 15);
+    --dark-green: rgb(1, 63, 1);
+    --green: rgb(3, 141, 3);
     --brown: rgb(82, 10, 10);
+    --light-brown: rgb(158, 40, 40);
+    --body-background: rgb(251, 248, 244);
+    --darker-body-background: rgb(236, 227, 214);
     --header-height: 50px;
     --header-padding: 10px;
 }
@@ -23,6 +27,7 @@
 body {
     font-size: 10px;
     font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--body-background);
 }
 
 ul {
