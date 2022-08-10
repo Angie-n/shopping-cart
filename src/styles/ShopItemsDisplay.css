@@ -1,0 +1,125 @@
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 20vw, 300px), 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#product-container > div {
+    display: grid;
+    grid-template-rows: 70% 30%;
+    border: 1px solid rgb(228, 225, 225);
+    border-radius: 2px;
+    color: var(--brown);
+    overflow: hidden;
+}
+
+#product-container > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: white;
+}
+
+#product-container > div > div {
+    display: grid;
+    grid-template-columns: 70% calc(30% - 20px);
+    grid-row: 1fr 1fr;
+    padding: 10px;
+    position: relative;
+}
+
+#product-container > div > div h3 {
+    font-size: clamp(1.5em, 3vw, 1.8em);
+}
+
+#product-container > div > div p {
+    font-size: 1.5em;
+    width: 35%;
+    text-align: end;
+}
+
+.quick-add-container {
+    grid-column: 1 / 3;
+    display: none;
+    width: 100%;
+    grid-template-columns: 30% 40% 10px 10px;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+}
+
+.quick-add-container > label button {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: var(--brown);
+    background-color: var(--darker-body-background);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.quick-add-container > label button:hover {
+    border-style: inset;
+}
+
+.quick-add-container input {
+    border: 1px solid rgb(229, 213, 213);
+    text-align: end;
+    padding-right: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.quick-add-fine-tuning {
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    background-color: var(--brown);
+    width: 20px;
+    height: 20px;
+}
+
+.quick-add-fine-tuning:hover {
+    background-color: var(--light-brown);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0.5;
+    }
+}
+
+.half-fade-out {
+    animation: 0.5s fadeIn forwards;
+}
+
+@keyframes quickAddEntrance {
+    0% {
+        opacity: 0;
+        bottom: 30px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 10px;
+    }
+}
+
+.grow-height {
+    animation: 2s quickAddEntrance forwards;
+}
