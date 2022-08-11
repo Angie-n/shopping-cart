@@ -33,9 +33,11 @@ const ShopItemsDisplay = props => {
                         <h3>{p.name}</h3><p>${p.price}</p>
                         <form method="post" className="quick-add-container" onSubmit={e => handleQuickAddButtonClick(e, p)}>
                             <label htmlFor="quick-add"><button type="submit">Quick Add</button></label>
-                            <input type="number" name="quick-add" defaultValue="0" min="0" onInput={e => e.currentTarget.value = Math.abs(e.currentTarget.value)}></input>
-                            <button type="button" className="fine-tuning-btn" onClick={() => {document.querySelectorAll("input[name='quick-add'")[i].value++}}>+</button>
-                            <button type="button" className="fine-tuning-btn" onClick={() => {if(document.querySelectorAll("input[name='quick-add'")[i].value > 0) document.querySelectorAll("input[name='quick-add'")[i].value--}}>-</button>
+                            <div className="fine-tuning-container">
+                                <button type="button" className="fine-tuning-btn" onClick={() => {document.querySelectorAll("input[name='quick-add'")[i].value++}}>+</button>
+                                <input type="number" name="quick-add" defaultValue="0" min="0" onInput={e => e.currentTarget.value = Math.abs(e.currentTarget.value)}></input>
+                                <button type="button" className="fine-tuning-btn" onClick={() => {if(document.querySelectorAll("input[name='quick-add'")[i].value > 0) document.querySelectorAll("input[name='quick-add'")[i].value--}}>-</button>
+                            </div>
                         </form>
                     </div>
                 </div>})}

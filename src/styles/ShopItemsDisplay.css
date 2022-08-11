@@ -51,24 +51,20 @@
     grid-column: 1 / 3;
     display: none;
     width: 100%;
-    grid-template-columns: 30% 50% 20px 20px;
-    align-items: center;
+    grid-template-columns: 40% 40%;
     position: absolute;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     z-index: 1;
 }
 
 .quick-add-container > label button {
     width: 100%;
-    border-radius: 5px;
     border: 1px solid var(--brown);
+    border-radius: 10px;
     color: var(--brown);
-    background-color: inherit;
+    background-color: var(--darker-body-background);
     font-family: 'Times New Roman', Times, serif;
-}
-
-.quick-add-container > input {
-    margin-left: 5px;
 }
 
 .quick-add-container > label button:hover {

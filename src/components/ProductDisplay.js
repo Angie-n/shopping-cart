@@ -79,9 +79,11 @@ const ProductDisplay = props => {
                     <p>{product.description}</p>
                     <form method="post" id="add-to-cart-form" onSubmit={e => handleAddToCartButtonClick(e, product)}>
                         <label htmlFor="add-to-cart">Quantity</label>
-                        <input type="number" name="add-to-cart" defaultValue="0" min="0" onInput={e => e.currentTarget.value = Math.abs(e.currentTarget.value)}></input>
-                        <button type="button" className="fine-tuning-btn" onClick={() => document.querySelector("input[name='add-to-cart'").value++}>+</button>
-                        <button type="button" className="fine-tuning-btn" onClick={() => {if(document.querySelector("input[name='add-to-cart'").value > 0) document.querySelector("input[name='add-to-cart'").value--}}>-</button>
+                        <div className="fine-tuning-container">
+                            <button type="button" className="fine-tuning-btn" onClick={() => document.querySelector("input[name='add-to-cart'").value++}>+</button>
+                            <input type="number" name="add-to-cart" defaultValue="0" min="0" onInput={e => e.currentTarget.value = Math.abs(e.currentTarget.value)}></input>
+                            <button type="button" className="fine-tuning-btn" onClick={() => {if(document.querySelector("input[name='add-to-cart'").value > 0) document.querySelector("input[name='add-to-cart'").value--}}>-</button>
+                        </div>
                         <button type="submit">Add to Cart</button>
                     </form>
                 </div>
