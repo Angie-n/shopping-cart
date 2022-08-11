@@ -1,19 +1,29 @@
 #product-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 20vw, 300px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 20vw, 300px), 1fr));
     grid-auto-rows: 1fr;
-    grid-gap: 10px;
-    margin: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
 #product-container > div {
+    position: relative;
     display: grid;
     grid-template-rows: 70% 30%;
-    border: 1px solid rgb(228, 225, 225);
+    border: 1px solid rgb(242, 238, 223);
     border-radius: 2px;
     color: var(--brown);
     overflow: hidden;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+#product-container > div > a {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 #product-container > div img {
@@ -29,14 +39,10 @@
     grid-row: 1fr 1fr;
     padding: 10px;
     position: relative;
-}
-
-#product-container > div > div h3 {
-    font-size: clamp(1.5em, 3vw, 1.8em);
+    font-size: clamp(1.4em, 2vw, 1.8em);
 }
 
 #product-container > div > div p {
-    font-size: 1.5em;
     width: 35%;
     text-align: end;
 }
@@ -45,29 +51,29 @@
     grid-column: 1 / 3;
     display: none;
     width: 100%;
-    grid-template-columns: 30% 40% 10px 10px;
+    grid-template-columns: 30% 50% 20px 20px;
     align-items: center;
     position: absolute;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .quick-add-container > label button {
     width: 100%;
     border-radius: 5px;
-    border: 1px solid white;
+    border: 1px solid var(--brown);
     color: var(--brown);
-    background-color: var(--darker-body-background);
+    background-color: inherit;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.quick-add-container > label button:hover {
-    border-style: inset;
+.quick-add-container > input {
+    margin-left: 5px;
 }
 
-.quick-add-container input {
-    border: 1px solid rgb(229, 213, 213);
-    text-align: end;
-    padding-right: 5px;
+.quick-add-container > label button:hover {
+    border-color: var(--light-brown);
+    color: var(--light-brown);
 }
 
 input::-webkit-outer-spin-button,
@@ -80,21 +86,8 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.quick-add-fine-tuning {
-    border-radius: 50%;
-    border: 1px solid white;
-    color: white;
-    background-color: var(--brown);
-    width: 20px;
-    height: 20px;
-}
-
-.quick-add-fine-tuning:hover {
-    background-color: var(--light-brown);
-}
-
 /* Animations */
-@keyframes fadeIn {
+@keyframes halfFade {
     0% {
       opacity: 1;
     }
@@ -105,7 +98,7 @@ input[type=number] {
 }
 
 .half-fade-out {
-    animation: 0.5s fadeIn forwards;
+    animation: 0.5s halfFade forwards;
 }
 
 @keyframes quickAddEntrance {
@@ -116,7 +109,7 @@ input[type=number] {
 
     100% {
         opacity: 1;
-        bottom: 10px;
+        bottom: 5px;
     }
 }
 
