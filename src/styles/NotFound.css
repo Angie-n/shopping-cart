@@ -1,0 +1,21 @@
+#product-display-not-found {
+    position: fixed;
+    height: calc(100vh - 20px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+#product-display-not-found img {
+    width: 30%;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+#product-display-not-found a {
+    font-size: 0.5em;
+    color: var(--brown)
+}
