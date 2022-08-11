@@ -1,9 +1,11 @@
 import ShopItemsDisplay from "./ShopItemsDisplay";
 
-const Shop = () => {
+const Shop = props => {
+    const {cartItems, setCartItems} = props;
+
     return (
         <main>
-            <ShopItemsDisplay />
+            <ShopItemsDisplay cartItems={cartItems} setCartItems={setCartItems} />
         </main>
     );
 };

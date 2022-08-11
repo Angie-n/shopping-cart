@@ -13,7 +13,7 @@ const RouteSwitch = () => {
             <Header numCartItems={cartItems.length}></Header>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<Shop/>} />
+                <Route path="/shop" element={<Shop cartItems={cartItems} setCartItems={setCartItems}/>} />
             </Routes>
         </BrowserRouter>
     );
