@@ -1,12 +1,10 @@
-import ShopItemsDisplay from "./ShopItemsDisplay";
+import { Outlet } from "react-router-dom";
+import "../styles/Shop.css";
 
-const Shop = props => {
-    const {cartItems, setCartItems} = props;
+const Shop = () => {
 
     return (
-        <main>
-            <ShopItemsDisplay cartItems={cartItems} setCartItems={setCartItems} />
-        </main>
+        <main><Outlet /></main>
     );
 };
 
