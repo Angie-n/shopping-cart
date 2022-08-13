@@ -36,7 +36,7 @@
 
 #product-container > div > div {
     display: grid;
-    grid-template-columns: 70% calc(30% - 20px);
+    grid-template-columns: 70% 30%;
     grid-row: 1fr 1fr;
     padding: 10px;
     position: relative;
@@ -44,7 +44,7 @@
 }
 
 #product-container > div > div p {
-    width: 35%;
+    width: 100%;
     text-align: end;
 }
 
