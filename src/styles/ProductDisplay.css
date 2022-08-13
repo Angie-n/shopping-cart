@@ -67,7 +67,7 @@
     border: 1px solid var(--brown);
 }
 
-#add-to-cart-form button:hover {
+#add-to-cart-form button[type="submit"]:hover {
     border-color: var(--light-brown);
     color: var(--light-brown)
 }
