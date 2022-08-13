@@ -4,8 +4,8 @@ function importAll(r) {
   
 const images = importAll(require.context('../assets/images/shop', true, /\.(png|jpe?g)$/));
 
-const Product = (name, description, image, price, categories, pageName) => {
-    return {name, description, image, price, categories, pageName};
+const Product = (name, description, image, price, categories, quantity, pageName) => {
+    return {name, description, image, price, categories, quantity, pageName};
 }
 
 const createProducts = () => {
@@ -18,7 +18,7 @@ const createProducts = () => {
         let endOfName = imgNoStaticMedia.indexOf(".");
         let pageName = imgNoStaticMedia.substring(0, endOfName);
         let name = pageName.replaceAll("-", " ");
-        products.push(Product(name, defaultDescription, img, defaultPrice, [], pageName));
+        products.push(Product(name, defaultDescription, img, defaultPrice, [], 1, pageName));
     });
     return products;
 }
