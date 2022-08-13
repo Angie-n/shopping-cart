@@ -14,23 +14,20 @@ const Navigation = () => {
 };
 
 const Header = props => {
-    const {numCartItems} = props;
+    const {numProductsInCart, setCartPreviewShouldBeOpen} = props;
 
     const createCartItemIcon = () => {
-        if(numCartItems === 0) return (<></>);
-        let numDisplay = numCartItems;
-        if(numCartItems > 10) numDisplay = "10+";
+        if(numProductsInCart === 0) return (<></>);
+        let numDisplay = numProductsInCart;
+        if(numProductsInCart > 10) numDisplay = "10+";
 
-        return (
-            <div id="cart-num-icon" style={{display: "flex"}}>{numDisplay}</div>
-        );
-
+        return (<div id="cart-num-icon" style={{display: "flex"}}>{numDisplay}</div>);
     }
 
     return (
         <header>
             <Navigation />
-            <button id="cart-btn"><i className="fa-solid fa-cart-shopping"></i>{createCartItemIcon()}</button>
+            <button id="cart-btn" onClick={() => setCartPreviewShouldBeOpen(true)}><i className="fa-solid fa-cart-shopping"></i>{createCartItemIcon()}</button>
         </header>
     );
 };

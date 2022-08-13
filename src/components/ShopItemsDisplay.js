@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import "../styles/ShopItemsDisplay.css";
 
 const ShopItemsDisplay = props => {  
-    const {allProducts, cartItems, setCartItems} = props;
+    const {allProducts, setProductsToAddToCart} = props;
 
     const handleProductMouseEnter = e => {
         e.currentTarget.getElementsByTagName("img")[0].classList.add("half-fade-out");
         e.currentTarget.getElementsByClassName("quick-add-container")[0].classList.add("grow-height");
-        e.currentTarget.getElementsByClassName("quick-add-container")[0].style.display = "grid";
+        e.currentTarget.getElementsByClassName("quick-add-container")[0].style.display = "flex";
     }
     
     const handleProductMouseLeave = e => {
@@ -20,7 +20,7 @@ const ShopItemsDisplay = props => {
         e.preventDefault();
         let productsToAdd = [];
         for (let i = 0; i < e.currentTarget.getElementsByTagName("input")[0].value; i++) productsToAdd.push(product);
-        setCartItems(cartItems.concat(productsToAdd));
+        setProductsToAddToCart(productsToAdd);
         e.currentTarget.getElementsByTagName("input")[0].value = 0;
     }
 
@@ -34,9 +34,9 @@ const ShopItemsDisplay = props => {
                         <form method="post" className="quick-add-container" onSubmit={e => handleQuickAddButtonClick(e, p)}>
                             <label htmlFor="quick-add"><button type="submit">Quick Add</button></label>
                             <div className="fine-tuning-container">
-                                <button type="button" className="fine-tuning-btn" onClick={() => {document.querySelectorAll("input[name='quick-add'")[i].value++}}>+</button>
-                                <input type="number" name="quick-add" defaultValue="0" min="0" onInput={e => e.currentTarget.value = Math.abs(e.currentTarget.value)}></input>
-                                <button type="button" className="fine-tuning-btn" onClick={() => {if(document.querySelectorAll("input[name='quick-add'")[i].value > 0) document.querySelectorAll("input[name='quick-add'")[i].value--}}>-</button>
+                            <button type="button" className="fine-tuning-btn" onClick={e => {if(e.currentTarget.nextElementSibling.value > 0) e.currentTarget.nextElementSibling.value--}}>-</button>
+                            <input type="number" name="add-to-cart" defaultValue="0" min="0" onInput={e => e.currentTarget.value = Math.abs(e.currentTarget.value)}></input>
+                            <button type="button" className="fine-tuning-btn" onClick={e => e.currentTarget.previousElementSibling.value++}>+</button>
                             </div>
                         </form>
                     </div>

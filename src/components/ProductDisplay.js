@@ -4,7 +4,7 @@ import NotFound from "./NotFound";
 import "../styles/ProductDisplay.css";
 
 const ProductDisplay = props => {
-    const {allProducts, cartItems, setCartItems} = props;
+    const {allProducts, setProductsToAddToCart} = props;
     const pathName = window.location.pathname;
     const productPageName = pathName.substring(pathName.indexOf("/shop/") + 6);
 
@@ -59,7 +59,7 @@ const ProductDisplay = props => {
         e.preventDefault();
         let productsToAdd = [];
         for (let i = 0; i < e.currentTarget.getElementsByTagName("input")[0].value; i++) productsToAdd.push(product);
-        setCartItems(cartItems.concat(productsToAdd));
+        setProductsToAddToCart(productsToAdd);
         e.currentTarget.getElementsByTagName("input")[0].value = 0;
     }
 
@@ -80,9 +80,9 @@ const ProductDisplay = props => {
                     <form method="post" id="add-to-cart-form" onSubmit={e => handleAddToCartButtonClick(e, product)}>
                         <label htmlFor="add-to-cart">Quantity</label>
                         <div className="fine-tuning-container">
-                            <button type="button" className="fine-tuning-btn" onClick={() => document.querySelector("input[name='add-to-cart'").value++}>+</button>
+                            <button type="button" className="fine-tuning-btn" onClick={e => {if(e.currentTarget.nextElementSibling.value > 0) e.currentTarget.nextElementSibling.value--}}>-</button>
                             <input type="number" name="add-to-cart" defaultValue="0" min="0" onInput={e => e.currentTarget.value = Math.abs(e.currentTarget.value)}></input>
-                            <button type="button" className="fine-tuning-btn" onClick={() => {if(document.querySelector("input[name='add-to-cart'").value > 0) document.querySelector("input[name='add-to-cart'").value--}}>-</button>
+                            <button type="button" className="fine-tuning-btn" onClick={e => e.currentTarget.previousElementSibling.value++}>+</button>
                         </div>
                         <button type="submit">Add to Cart</button>
                     </form>
