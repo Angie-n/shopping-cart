@@ -65,6 +65,11 @@ const CartPreview = props => {
         setInputTriggered(true);
     }
 
+    const handleRemoveButtonOnClick = p => {
+        setTotalCost(totalCost - p.price * p.quantity);
+        setProductsToRemoveFromCart([p]);
+    }
+
     const createPreviewItem = (p, i) => {
         return (
             <div key={"preview-cart-item-" + i} className="cart-preview-item">
@@ -77,7 +82,7 @@ const CartPreview = props => {
                         <input type="number" name="add-to-cart" min="1" defaultValue={p.quantity} onBlur={e => handleCartItemBlur(e, p)}></input>
                         <button type="button" className="fine-tuning-btn" onClick={e => handleCartItemIncrement(e, p)}>+</button>
                     </div>
-                    <button type="button" onClick={() => setProductsToRemoveFromCart([p])} className="remove-cart-preview-item-btn">Remove</button>
+                    <button type="button" onClick={() => handleRemoveButtonOnClick(p)} className="remove-cart-preview-item-btn">Remove</button>
                 </div>
             </div>
         );
