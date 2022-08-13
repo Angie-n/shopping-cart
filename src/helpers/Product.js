@@ -11,14 +11,14 @@ const Product = (name, description, image, price, categories, quantity, pageName
 const createProducts = () => {
     let products = [];
     const defaultDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-    const defaultPrice = 10000;
+    const defaultPrice = 50;
     images.forEach(img => {
         let indexOfStaticMedia = img.indexOf("static/media");
         let imgNoStaticMedia = img.substring(indexOfStaticMedia + 13);
         let endOfName = imgNoStaticMedia.indexOf(".");
         let pageName = imgNoStaticMedia.substring(0, endOfName);
         let name = pageName.replaceAll("-", " ");
-        products.push(Product(name, defaultDescription, img, defaultPrice, [], 1, pageName));
+        products.push(Product(name, defaultDescription, img, defaultPrice, ["plant"], 1, pageName));
     });
     return products;
 }
