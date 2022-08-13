@@ -6,6 +6,9 @@
 :root {
     --dark-green: rgb(1, 63, 1);
     --green: rgb(3, 141, 3);
+    --ivy: rgb(54, 102, 57);
+    --pale-green: rgb(190, 237, 165);
+    --light-blue: rgb(134, 213, 235);
     --brown: rgb(82, 10, 10);
     --light-brown: rgb(158, 40, 40);
     --body-background: rgb(251, 248, 244);
