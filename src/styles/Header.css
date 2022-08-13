@@ -1,6 +1,6 @@
 header {
     position: sticky;
-    background-color: var(--body-background);
+    background-color: var(--body-background);    
     z-index: 10;
     top: 0;
     display: grid;
