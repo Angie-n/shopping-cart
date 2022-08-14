@@ -24,6 +24,7 @@
     color: var(--body-background);
     transition: transform 1s;
     transform: translate(100%);
+    margin-bottom: 25px;
 }
 
 .open-cart-preview {
@@ -148,7 +149,6 @@
     border: none;
     text-decoration: underline;
     margin-top: 25px;
-    margin-bottom: 25px;
     margin-left: 5%;
     width: fit-content;
 }
