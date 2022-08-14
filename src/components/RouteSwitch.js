@@ -49,7 +49,7 @@ const RouteSwitch = () => {
     const checkNumberOfProductsInCart= () => productsInCart.reduce((prev, current) => prev + current.quantity, 0);
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="shopping-cart">
             <Header numProductsInCart={checkNumberOfProductsInCart()} cartPreviewShouldBeOpen={cartPreviewShouldBeOpen} setCartPreviewShouldBeOpen={setCartPreviewShouldBeOpen}></Header>
             <CartPreview numProductsInCart={checkNumberOfProductsInCart()} productsInCart={productsInCart} cartPreviewShouldBeOpen={cartPreviewShouldBeOpen} setCartPreviewShouldBeOpen={setCartPreviewShouldBeOpen} setProductsToRemoveFromCart={setProductsToRemoveFromCart}></CartPreview>
             <Routes>
