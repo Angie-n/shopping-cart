@@ -6,7 +6,7 @@ const Navigation = () => {
     return (
         <nav>
             <ul>
-                <li><h1><Link to=""><img id="store-logo" src={storeLogoSrc} alt="" /><p>Business Name</p></Link></h1></li>
+                <li><h1><Link to=""><img id="store-logo" src={storeLogoSrc} alt="" /><p>Petaling Goods</p></Link></h1></li>
                 <li><Link to="/shop">Shop</Link></li>
             </ul>
         </nav>
