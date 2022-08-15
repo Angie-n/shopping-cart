@@ -20,11 +20,15 @@
 @font-face {
     font-family: CormorantSC;
     src: url("../assets/fonts/CormorantSC-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: Montserrat;
     src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf");
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
