@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import products from "../helpers/Product";
 import Header from "./Header";
 import CartPreview from "./CartPreview";
@@ -49,7 +49,7 @@ const RouteSwitch = () => {
     const checkNumberOfProductsInCart= () => productsInCart.reduce((prev, current) => prev + current.quantity, 0);
 
     return (
-        <BrowserRouter basename="shopping-cart">
+        <HashRouter>
             <Header numProductsInCart={checkNumberOfProductsInCart()} cartPreviewShouldBeOpen={cartPreviewShouldBeOpen} setCartPreviewShouldBeOpen={setCartPreviewShouldBeOpen}></Header>
             <CartPreview numProductsInCart={checkNumberOfProductsInCart()} productsInCart={productsInCart} cartPreviewShouldBeOpen={cartPreviewShouldBeOpen} setCartPreviewShouldBeOpen={setCartPreviewShouldBeOpen} setProductsToRemoveFromCart={setProductsToRemoveFromCart}></CartPreview>
             <Routes>
@@ -60,7 +60,7 @@ const RouteSwitch = () => {
                 </Route>
                 <Route path="*" element={<NotFound></NotFound>}></Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
