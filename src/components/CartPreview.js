@@ -97,13 +97,14 @@ const CartPreview = props => {
         <>
         <BlockerDiv />
         <div id="cart-preview" className={animationClass} tabIndex={determineTabIndex()}>
+            <button id="cart-preview-exit-btn" tabIndex={determineTabIndex()} onClick={() => setCartPreviewShouldBeOpen(false)}>X</button>
             <h2>Cart Items</h2>
             <hr></hr>
             <div id="cart-preview-items">{productsInCart.map((p,i) => createPreviewItem(p, i))}</div>
             <div id="cart-preview-cost"><p>Total:</p><p>${totalCost}</p></div>
             <div id="cart-preview-btn-container">
-                <button id="cart-preview-exit-btn" tabIndex={determineTabIndex()}>Checkout</button>
-                <button id="cart-preview-exit-btn" tabIndex={determineTabIndex()} onClick={() => setCartPreviewShouldBeOpen(false)}>Continue Shopping</button>
+                <button tabIndex={determineTabIndex()}>Checkout</button>
+                <button tabIndex={determineTabIndex()} onClick={() => setCartPreviewShouldBeOpen(false)}>Continue Shopping</button>
             </div>
         </div>
         </>
