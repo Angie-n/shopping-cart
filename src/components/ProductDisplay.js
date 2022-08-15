@@ -5,28 +5,29 @@ import "../styles/ProductDisplay.css";
 
 const ProductDisplay = props => {
     const {allProducts, setProductsToAddToCart} = props;
-    const pathName = window.location.pathname;
+    const pathName = window.location.hash;
     const productPageName = pathName.substring(pathName.indexOf("/shop/") + 6);
 
     const displayAllPreviousPaths = () => {
         let paths = [];
         let pathNames = [];
-        let startIndex = pathName.indexOf("/");
-        let remainingPath = pathName.substring(1);
+        let initialIndex = pathName.indexOf("/shop/");
+        let startIndex = initialIndex;
+        let remainingPath = pathName;
 
-        while(startIndex !== -1) {
-            remainingPath = remainingPath.substring(startIndex)
+        while(startIndex !== -1) {            
+            remainingPath = remainingPath.substring(startIndex + 1);
             let endIndex = remainingPath.indexOf("/");
 
             let currentPath;
-            if(endIndex === -1) currentPath = pathName;
+            if(endIndex === -1) currentPath = pathName.substring(initialIndex);
             else {
                 endIndex += startIndex + 1;
-                currentPath = pathName.substring(0, endIndex);
+                currentPath = pathName.substring(initialIndex, endIndex);
             }
 
             paths.push(currentPath);
-            pathNames.push(currentPath.substring(startIndex + 1).replaceAll("-", " "));
+            pathNames.push(currentPath.substring(currentPath.lastIndexOf("/") + 1).replaceAll("-", " "));
 
             startIndex = endIndex;
         }
