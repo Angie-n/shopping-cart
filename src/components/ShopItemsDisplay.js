@@ -28,7 +28,7 @@ const ShopItemsDisplay = props => {
         <div id="product-container">
             {allProducts.map((p, i) => {return <div key={"product-" + i} onMouseEnter={e =>handleProductMouseEnter(e)} onMouseLeave={e => handleProductMouseLeave(e)}>
                     <Link to={p.pageName}></Link>
-                    <img src={p.image} alt=""></img>
+                    <img src={p.image} alt="" loading="lazy"></img>
                     <div>
                         <h3>{p.name}</h3><p>${p.price}</p>
                         <form method="post" className="quick-add-container" onSubmit={e => handleQuickAddButtonClick(e, p)}>
