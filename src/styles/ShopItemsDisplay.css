@@ -16,6 +16,11 @@
     text-decoration: none;
     text-transform: capitalize;
     padding-bottom: 20px;
+    height: 100%;
+}
+
+#product-container h3 {
+    font-weight: normal;
 }
 
 #product-container > div > a {
@@ -27,7 +32,7 @@
     z-index: 1;
 }
 
-#product-container > div img {
+#product-container > div > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -41,6 +46,8 @@
     padding: 10px;
     position: relative;
     font-size: clamp(1.4em, 2vw, 1.8em);
+    background-color: var(--body-background);
+    justify-content: center;
 }
 
 #product-container > div > div p {
@@ -52,6 +59,7 @@
     grid-column: 1 / 3;
     display: none;
     position: absolute;
+    left: -10px;
     align-items: center;
     justify-content: space-evenly;
     width: calc(100% + 20px);
@@ -59,7 +67,7 @@
 }
 
 .quick-add-container > * {
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .quick-add-container input {
@@ -113,7 +121,7 @@ input[type=number] {
 
     100% {
         opacity: 1;
-        bottom: 0px;
+        bottom: 5px;
     }
 }
 
